@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -6,10 +6,23 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import styles from "./searchBar.module.css";
 
 const SearchBar = () => {
+
+  const [location, setLocation] = useState('');
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    if (!location || location === '') return;
+
+    // console.log(location)
+
+    setLocation('');
+  }
+
   return(
     <div className={styles.searchBarSection}>
-      <form className={styles.searchBarForm}>
-        <input type="text" placeholder="Search for location" required autoFocus className={styles.searchBarInput}/>
+      <form className={styles.searchBarForm} onSubmit={submitHandler}>
+        <input type="text" placeholder="Search for location" required autoFocus className={styles.searchBarInput} value={location} onChange={event => setLocation(event.target.value)}/>
         <button className={styles.searchBarButton}><FontAwesomeIcon icon={faSearch} className={styles.searchBarIcon} /></button>
       </form>
     </div>
