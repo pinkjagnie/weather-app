@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import styles from "./searchBar.module.css";
 
-const SearchBar = () => {
+const SearchBar = ({ submitSearch }) => {
 
   const [location, setLocation] = useState('');
 
@@ -15,6 +15,8 @@ const SearchBar = () => {
     if (!location || location === '') return;
 
     // console.log(location)
+
+    submitSearch(location);
 
     setLocation('');
   }

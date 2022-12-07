@@ -7,7 +7,12 @@ import SearchBar from "./SearchBar";
 import styles from "./homePage.module.css";
 
 const HomePage = () => {
-  const { isError, isLoading, forecast } = useForecast();
+  const { isError, isLoading, forecast, submitRequest } = useForecast();
+
+  const submitHandler = (value) => {
+    // console.log({value})
+    submitRequest({value})
+  }
 
   return(
     <div className={styles.homePageSection}>
@@ -15,7 +20,7 @@ const HomePage = () => {
         <h1>Weather forecast app</h1>
         <h2>Don't be surprised! Check the weather before you leave the house</h2>
       </div>
-      <SearchBar />
+      <SearchBar submitSearch={submitHandler}/>
     </div>
   )
 };

@@ -5,10 +5,15 @@ const useForecast = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [forecast, setForecast] = useState(null);
 
+  const submitRequest = (location) => {
+    console.log({location});
+  }
+
   return {
     isError,
     isLoading,
-    forecast
+    forecast,
+    submitRequest
   }
 };
 
