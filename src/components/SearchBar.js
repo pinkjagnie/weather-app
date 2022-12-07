@@ -15,7 +15,7 @@ const SearchBar = ({ submitSearch }) => {
 
     if (!location || location === '') return;
 
-    // console.log(location)
+    console.log(location)
 
     submitSearch(location);
 
