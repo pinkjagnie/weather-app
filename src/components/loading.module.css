@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.box svg path,
-.box svg rect {
+.loadingBox svg path,
+.loadingBox svg rect {
   fill: #65b6ee;
 }
