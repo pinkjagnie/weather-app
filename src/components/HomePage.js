@@ -1,10 +1,14 @@
 import React from "react";
 
+import useForecast from "../hooks/useForecast";
+
 import SearchBar from "./SearchBar";
 
 import styles from "./homePage.module.css";
 
 const HomePage = () => {
+  const { isError, isLoading, forecast } = useForecast();
+
   return(
     <div className={styles.homePageSection}>
       <div className={styles.homePageText}>
