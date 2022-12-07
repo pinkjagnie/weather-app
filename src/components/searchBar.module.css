@@ -1,0 +1,42 @@
+.searchBarSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  background-color: #222831;
+  color: whitesmoke;
+  width: 85%;
+  max-width: 675px;
+  min-height: 300px;
+}
+
+.searchBarInput {
+  width: 350px;
+  padding: 0.6rem 1rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.searchBarButton {
+  height: 50px;
+  width: 50px;
+  padding: 0.65rem;
+  border: none;
+  background-color: transparent;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.searchBarIcon {
+  font-size: 1.5rem;
+}
+
+.searchBarButton:hover .searchBarIcon {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+  color: #656565;
+}
