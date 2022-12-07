@@ -1,0 +1,18 @@
+.loadingSection {
+  position: absolute;
+  top: 18vh;
+  left: calc(50vw - 55px);
+  z-index: 5;
+}
+
+.loadingBox {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box svg path,
+.box svg rect {
+  fill: #65b6ee;
+}

@@ -8,6 +8,9 @@ const useForecast = () => {
   const [forecast, setForecast] = useState(null);
 
   async function submitRequest(value) {
+    setIsLoading(true);
+    setIsError(false);
+
     const city = value.value;
     console.log(city);
 
@@ -29,6 +32,8 @@ const useForecast = () => {
       console.log(err);
       setIsError('Ups! Something went wrong. Please, try again')
     };
+
+    setIsLoading(false);
   }
 
 
