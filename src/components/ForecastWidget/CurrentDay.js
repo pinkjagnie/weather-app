@@ -8,7 +8,7 @@ import mountainImg from "../../assets/mountain.jpg";
 import springImg from "../../assets/spring.jpg";
 import summerImg from "../../assets/summer.jpg";
 
-import "./currentDay.css";
+import styles from "./currentDay.module.css";
 
 const CurrentDay = ({forecast}) => {
   const weather_icon = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
@@ -43,20 +43,20 @@ const CurrentDay = ({forecast}) => {
   };
 
   return(
-    <div className="currentDaySection">
-      <div className="currentDayImage">
+    <div className={styles.currentDaySection}>
+      <div className={styles.currentDayImage}>
         <div style={imageOption(forecast.main.temp)}></div>
       </div>
-      <div className="currentDayInfo">
-        <div className="currentDayInfoMain">
+      <div className={styles.currentDayInfo}>
+        <div className={styles.currentDayInfoMain}>
           <h2>{dayBuilder(new Date())}</h2>
           <p>{dateBuilder(new Date())}</p>
-          <div className="currentDayLocation">
+          <div className={styles.currentDayLocation}>
             <FontAwesomeIcon icon={faLocationPin} />
             <span>{forecast.name}, {forecast.sys.country}</span>
           </div>
         </div>
-        <div className="currentDayInfoBottom">
+        <div className={styles.currentDayInfoBottom}>
           <img width="45" src={weather_icon} alt="" />
           <h2>
             <span>{Math.round(forecast.main.temp)}</span>°C
