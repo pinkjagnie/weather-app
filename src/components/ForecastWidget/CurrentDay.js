@@ -3,12 +3,27 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationPin } from '@fortawesome/free-solid-svg-icons';
 
+import winterImg from "../../assets/winter.jpg";
 import mountainImg from "../../assets/mountain.jpg";
+import springImg from "../../assets/spring.jpg";
+import summerImg from "../../assets/summer.jpg";
 
-import styles from "./currentDay.module.css";
+import "./currentDay.css";
 
 const CurrentDay = ({forecast}) => {
   const weather_icon = `http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png`;
+
+  const imageOption = (temp) => {
+    if (temp <=1) {
+      return { backgroundImage: `url(${winterImg})` }
+    } else if (temp > 1 && temp <=15) {
+      return { backgroundImage: `url(${mountainImg})` }
+    } else if (temp > 15 && temp <=20) {
+      return { backgroundImage: `url(${springImg})` }
+    } else if (temp > 20) {
+      return { backgroundImage: `url(${summerImg})` }
+    };
+  };
 
   const dayBuilder = (d) => {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -28,20 +43,20 @@ const CurrentDay = ({forecast}) => {
   };
 
   return(
-    <div className={styles.currentDaySection}>
-      <div className={styles.currentDayImage}>
-        <img src={mountainImg} alt="mountain" />
+    <div className="currentDaySection">
+      <div className="currentDayImage">
+        <div style={imageOption(forecast.main.temp)}></div>
       </div>
-      <div className={styles.currentDayInfo}>
-        <div className={styles.currentDayInfoMain}>
+      <div className="currentDayInfo">
+        <div className="currentDayInfoMain">
           <h2>{dayBuilder(new Date())}</h2>
           <p>{dateBuilder(new Date())}</p>
-          <div className={styles.currentDayLocation}>
+          <div className="currentDayLocation">
             <FontAwesomeIcon icon={faLocationPin} />
             <span>{forecast.name}, {forecast.sys.country}</span>
           </div>
         </div>
-        <div className={styles.currentDayInfoBottom}>
+        <div className="currentDayInfoBottom">
           <img width="45" src={weather_icon} alt="" />
           <h2>
             <span>{Math.round(forecast.main.temp)}</span>°C
