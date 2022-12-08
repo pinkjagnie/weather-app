@@ -38,15 +38,18 @@ const useForecast = () => {
     };
 
     setIsLoading(false);
-  }
+  };
 
-
+  const searchAgain = () => {
+    setForecast(null);
+  };
 
   return {
     isError,
     isLoading,
     forecast,
-    submitRequest
+    submitRequest,
+    searchAgain
   }
 };
 

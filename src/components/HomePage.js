@@ -6,16 +6,21 @@ import SearchBar from "./SearchBar";
 import Loading from "./Loading";
 import Error from "./Error";
 import ForecastWidget from "./ForecastWidget/ForecastWidget";
+import SearchAgain from "./SearchAgain";
 
 import styles from "./homePage.module.css";
 
 const HomePage = () => {
-  const { isError, isLoading, forecast, submitRequest } = useForecast();
+  const { isError, isLoading, forecast, submitRequest, searchAgain } = useForecast();
 
   const submitHandler = (value) => {
     // console.log({value})
     submitRequest({value})
-  }
+  };
+
+  const searchAgainHandler = () => {
+    searchAgain()
+  };
 
   return(
     <div className={styles.homePageSection}>
@@ -27,6 +32,7 @@ const HomePage = () => {
       {isLoading && <Loading />}
       {isError && <Error message={isError} />}
       {forecast && <ForecastWidget forecast={forecast} />}
+      {forecast && <SearchAgain searchAgainHandler={searchAgainHandler}/>}
     </div>
   )
 };

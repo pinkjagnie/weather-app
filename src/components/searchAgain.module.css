@@ -1,0 +1,39 @@
+.searchAgainSection {
+  position: absolute;
+  height: 80px;
+  width: 460px;
+  bottom: 2vh;
+  left: calc(50vw - 230px);
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  background-color: #656565;
+  color: whitesmoke;
+}
+
+.searchAgainSection p {
+  padding-top: 1rem;
+  padding-left: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.searchAgainSection button {
+  display: block;
+  width: 180px;
+  margin: 1.3rem auto;
+  padding: 0.5rem 2rem;
+  border: 1.5px solid whitesmoke;
+  border-radius: 15px;
+  background-color: #54a04f;
+  color: whitesmoke;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.searchAgainSection button:hover {
+  background-color: #1f2b37;
+}
