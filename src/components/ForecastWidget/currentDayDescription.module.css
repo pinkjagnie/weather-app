@@ -1,0 +1,22 @@
+.currentDayDescriptionSection {
+  width: 60%;
+  height: 80%;
+  min-height: 320px;
+  max-width: 405px;
+}
+
+.descriptionBox {
+  width: 100%;
+  min-width: 300px;
+  max-width: 405px;
+  padding-left: 2.5rem;
+}
+
+.descriptionItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.descriptionItem .descriptionTitle {
+  font-weight: bold;
+}

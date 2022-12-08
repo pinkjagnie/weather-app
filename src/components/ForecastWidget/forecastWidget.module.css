@@ -12,3 +12,10 @@
   max-width: 675px;
   min-height: 400px;
 }
+
+.forecastWidgetMore {
+  width: 60%;
+  height: 80%;
+  min-height: 320px;
+  max-width: 405px;
+}

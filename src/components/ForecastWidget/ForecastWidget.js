@@ -10,7 +10,7 @@ const ForecastWidget = ({forecast}) => {
   return(
     <div className={styles.forecastWidgetSection}>
       <CurrentDay forecast={forecast}/>
-      <div>
+      <div className={styles.forecastWidgetMore}>
         <CurrentDayDescription forecast={forecast}/>
         <UpcomingDays forecast={forecast}/>
       </div>
