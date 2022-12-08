@@ -23,7 +23,7 @@ const useForecast = () => {
 
       setForecast(res);
 
-      if (!res.ok) {
+      if (!res.ok && !res.name) {
         setIsError(`Ups! ` + res.message + `. Please try again`)
       }
 
