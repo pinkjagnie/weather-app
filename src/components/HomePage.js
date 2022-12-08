@@ -23,7 +23,7 @@ const HomePage = () => {
         <h1>Weather forecast app</h1>
         <h2>Don't be surprised! Check the weather before you leave the house</h2>
       </div>
-      {!isLoading && <SearchBar submitSearch={submitHandler}/>}
+      {!isLoading && !forecast && <SearchBar submitSearch={submitHandler}/>}
       {isLoading && <Loading />}
       {isError && <Error message={isError} />}
       {forecast && <ForecastWidget forecast={forecast} />}

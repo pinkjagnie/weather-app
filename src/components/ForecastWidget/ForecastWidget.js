@@ -6,13 +6,13 @@ import UpcomingDays from "./UpcomingDays";
 
 import styles from "./forecastWidget.module.css";
 
-const ForecastWidget = () => {
+const ForecastWidget = ({forecast}) => {
   return(
-    <div>
-      <CurrentDay />
+    <div className={styles.forecastWidgetSection}>
+      <CurrentDay forecast={forecast}/>
       <div>
-        <CurrentDayDescription />
-        <UpcomingDays />
+        <CurrentDayDescription forecast={forecast}/>
+        <UpcomingDays forecast={forecast}/>
       </div>
     </div>
   )
