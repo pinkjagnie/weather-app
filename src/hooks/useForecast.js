@@ -23,6 +23,10 @@ const useForecast = () => {
 
       setForecast(res);
 
+      if (!res.ok) {
+        setIsError(`Ups! ` + res.message + `. Please try again`)
+      }
+
       if (!res || res.length === 0) {
         console.log('error');
         setIsError('Sorry! There is no such location')

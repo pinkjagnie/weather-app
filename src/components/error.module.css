@@ -1,0 +1,20 @@
+.errorSection {
+  position: absolute;
+  height: 100px;
+  width: 85%;
+  max-width: 675px;
+  bottom: 10vh;
+  left: calc(50vw - 43%);
+  margin: 0 auto;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 24px 7px rgba(0, 0, 0, 0.2);
+  background-color: rgb(231, 114, 114);
+  color: whitesmoke;
+}
+
+.errorSection p {
+  padding-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
