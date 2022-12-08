@@ -12,14 +12,12 @@ const useForecast = () => {
     setIsError(false);
 
     const city = value.value;
-    console.log(city);
 
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
   
     try {
       const response = await fetch(url)
       const res = await response.json()
-      console.log(res);
 
       setForecast(res);
 

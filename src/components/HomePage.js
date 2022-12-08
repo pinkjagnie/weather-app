@@ -14,7 +14,6 @@ const HomePage = () => {
   const { isError, isLoading, forecast, submitRequest, searchAgain } = useForecast();
 
   const submitHandler = (value) => {
-    // console.log({value})
     submitRequest({value})
   };
 
