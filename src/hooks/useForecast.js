@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_KEY = 'e528b2737da0d462f48c34b26a6ad5fa';
+ const API_KEY = process.env.REACT_APP_API_KEY;
 
 const useForecast = () => {
   const [isError, setIsError] = useState(false);
@@ -10,7 +10,6 @@ const useForecast = () => {
   async function submitRequest(value) {
     setIsLoading(true);
     setIsError(false);
-
     const city = value.value;
 
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
