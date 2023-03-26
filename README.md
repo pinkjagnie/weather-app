@@ -1,4 +1,4 @@
-# Weather forecast app
+# ⛅ Weather forecast app
 
 ### Description
 
